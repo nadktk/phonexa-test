@@ -16,12 +16,12 @@ gulp.task('styles', () => {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
+    .pipe(concat('style.css'))
     .pipe(
       autoprefixer({
         cascade: false
       })
     )
-    .pipe(concat('style.css'))
     .pipe(
       cleanCSS({
         level: 2

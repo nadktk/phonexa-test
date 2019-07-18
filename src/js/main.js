@@ -142,7 +142,9 @@ $(function() {
       login: form.login.value,
       email: form.email.value,
       company: form.company.value,
-      password: form.password.value
+      password: form.password.value,
+      department: form.department.value,
+      vacancy: form.vacancy.value
     };
     window.localStorage.setItem('myData', JSON.stringify(newData));
     switchSteps(step3);
