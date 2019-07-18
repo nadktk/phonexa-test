@@ -1,0 +1,30 @@
+/* resets */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+p {
+  margin: 0;
+}
+fieldset {
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}

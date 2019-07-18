@@ -1,0 +1,21 @@
+/* COLORS */
+$primary-color: #3c8dbc;
+$primary-color-dark: #367ea9;
+$secondary-color: #e0e0e0;
+$secondary-color-dark: #969696;
+$danger-color: #de5241;
+$success-color: #07880e;
+
+/* SIZES */
+$padding-big: 20px;
+$padding-small: 7px;
+$margin-small: 15px;
+$font-size-base: 13px;
+
+/* MIXINS */
+@mixin flex-column-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

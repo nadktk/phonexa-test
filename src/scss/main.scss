@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import 'vars';
+@import 'reset';
+
+/* main styles */
+
+body {
+  /* background */
+  background: url('https://i.ibb.co/L64B25C/photo-1522071820081-009f0129c71c-ixlib-rb-1-2.jpg')
+      no-repeat center fixed,
+    rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-blend-mode: multiply;
+  /* centered content */
+  min-height: 100vh;
+  @include flex-column-center;
+  /* font */
+  font-family: 'Open Sans', sans-serif;
+  font-size: $font-size-base;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p.success {
+  color: $success-color;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.step-screen {
+  width: 400px;
+  background: #fff;
+  padding: $padding-big;
+  position: relative;
+  > :not(:last-child) {
+    margin-bottom: $margin-small;
+  }
+  h2,
+  div.buttons {
+    text-align: center;
+  }
+}
+
+/* invisible further steps */
+#register-form fieldset:not(:first-of-type) {
+  display: none;
+}
+
+input,
+select {
+  padding: $padding-small;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 100%;
+  border: 1px solid $secondary-color-dark;
+  outline: 0;
+  &[disabled] {
+    background: $secondary-color;
+  }
+  &.error {
+    border: 1px dotted $danger-color;
+  }
+}
+
+label.error {
+  color: $danger-color;
+  font-size: 0.9em;
+}
+
+/* buttons */
+input[type='button'],
+input[type='submit'] {
+  min-width: 120px;
+  background: $primary-color;
+  border: 1px solid $primary-color-dark;
+  color: #fff;
+  transition: 0.3s;
+  &:hover {
+    background: $primary-color-dark;
+  }
+}
