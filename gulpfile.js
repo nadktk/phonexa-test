@@ -8,6 +8,7 @@ const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
+const imagemin = require('gulp-imagemin');
 
 //Таск для обработки стилей
 gulp.task('styles', () => {
@@ -66,8 +67,16 @@ gulp.task('watch', () => {
   gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-//Таск по умолчанию, Запускает del, styles, scripts и watch
+//Таск для оптимизации изображений
+gulp.task('imageMin', () =>
+  gulp
+    .src('./src/images/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./build/images'))
+);
+
+//Таск по умолчанию, Запускает del, styles, scripts, imageMin и watch
 gulp.task(
   'default',
-  gulp.series('del', gulp.parallel('styles', 'scripts'), 'watch')
+  gulp.series('del', gulp.parallel('styles', 'scripts', 'imageMin'), 'watch')
 );
